@@ -5,14 +5,13 @@ package br.unesp.rc.Restaurante.model;
 @project Restaurante
 */
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +21,10 @@ public class Comanda {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int idComanda;
+
+    @NotNull
+    @Column( nullable = false )
     private String comandaCode;
+
 
 }

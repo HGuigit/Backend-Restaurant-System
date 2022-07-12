@@ -1,6 +1,7 @@
 package br.unesp.rc.Restaurante.model;
+
 /*
-@author Guilherme on 11/07/2022.
+@author Guilherme on 12/07/2022.
 @project Restaurante
 */
 
@@ -8,29 +9,36 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.util.Date;
-
-import static javax.persistence.GenerationType.AUTO;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario {
+public class Pedido {
     @Id
-    @GeneratedValue(strategy = AUTO)
-    private int idUsuario;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int idPedido;
+
+    @NotNull
+    private float valorTotal;
+
     @NotNull
     @Column( nullable = false )
-    private String username;
+    private Date DataHora;
+
     @NotNull
-    @Column( nullable = false )
-    private String senha;
-    @NotNull
-    private boolean isFuncionario;
     @OneToOne
     @JoinColumn(name = "idFuncionario")
     private Funcionario funcionarioId;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "idComanda")
+    private Comanda comanda;
+
+
 }
