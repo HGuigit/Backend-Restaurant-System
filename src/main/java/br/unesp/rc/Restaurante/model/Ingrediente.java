@@ -34,7 +34,7 @@ public class Ingrediente {
             joinColumns = @JoinColumn(name = "idIngrediente"),
             inverseJoinColumns = @JoinColumn(name = "idReceita")
     )
-    private List<Receitas> receitas;
+    private List<Receita> receitas;
 
 
 }
