@@ -4,9 +4,10 @@ import br.unesp.rc.Restaurante.model.Autorizacao;
 
 import java.util.List;
 
-public interface AutorizacaoService {
+public interface ReceitaService {
 
-    List<Permissao> getAllAutorizacoes();
-    Ingrediente getorizacaoById();
+    Autorizacao saveAutorizacao(Autorizacao autorizacao);
+    List<Autorizacao> getAllAltorizacoes();
+    Autorizacao getAutorizacaoByNome(String nome);
 
 }

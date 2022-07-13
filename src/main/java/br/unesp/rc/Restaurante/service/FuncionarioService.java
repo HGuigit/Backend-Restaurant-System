@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface FuncionarioService {
 
+    Funcionario saveFuncionario(Funcionario funcionario);
     List<Funcionario> getAllFuncionarios();
-    Ingrediente getFuncionarioById();
+    Funcionario getFuncionarioById(int idFuncionario);
 
 }

@@ -7,6 +7,6 @@ import java.util.List;
 public interface IngredienteService {
 
     List<Ingrediente> getAllIngredientes();
-    Ingrediente getIngredienteByNome();
+    Ingrediente getIngredienteByNome(String ingrediente);
 
 }

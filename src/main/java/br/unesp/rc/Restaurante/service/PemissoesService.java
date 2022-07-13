@@ -1,12 +1,14 @@
 package br.unesp.rc.Restaurante.service;
 
-import br.unesp.rc.Restaurante.model.Permissao;
+
+import br.unesp.rc.Restaurante.model.Permissoes;
 
 import java.util.List;
 
-public interface PermissaoService {
+public interface PermissoesService {
 
-    List<Permissao> getAllPermissoes();
-    Ingrediente getPermissaoById();
+    Permissoes savePermissoes(Permissoes permissoes);
+    List<Permissoes> getAllPermissoess();
+    Permissoes getPermissoesById(int idPermissoes);
 
 }
