@@ -9,24 +9,35 @@ import br.unesp.rc.Restaurante.model.Receita;
 import br.unesp.rc.Restaurante.service.ReceitaService;
 import br.unesp.rc.Restaurante.service.ReceitaServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/receitas")
+@RequestMapping("/receita")
 @RequiredArgsConstructor
+@Slf4j
 public class ReceitaController {
 
     private final ReceitaService receitaService;
 
     @GetMapping("/")
-    public List<Receita> getReceitas(HttpServletRequest, HttpServletResponse){
+    public ResponseEntity<List<Receita>> getReceitas(){
+        List<Receita> receitas = receitaService.getAllReceitas();
+        return ResponseEntity.ok().body(receitas);
+    }
 
+    @PostMapping("/")
+    public ResponseEntity<Receita>saveReceita(@RequestBody Receita receita){
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/receita/").toUriString()); // Uri Para retorno no HEADER
+        return ResponseEntity.created(uri).body(receitaService.saveReceita(receita));
     }
 
 

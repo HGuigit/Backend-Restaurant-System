@@ -19,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Comanda {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idComanda;
 
     @NotNull

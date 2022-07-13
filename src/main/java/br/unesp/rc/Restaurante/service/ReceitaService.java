@@ -11,7 +11,8 @@ import java.util.List;
 
 public interface ReceitaService {
 
+    Receita saveReceita(Receita receita);
     List<Receita> getAllReceitas();
-    Receita getReceitaByNome();
+    Receita getReceitaByNome(String nome);
 
 }

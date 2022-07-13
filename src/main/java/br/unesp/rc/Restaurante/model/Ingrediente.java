@@ -11,6 +11,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.JoinColumn;
@@ -21,20 +23,12 @@ import javax.persistence.JoinColumn;
 @AllArgsConstructor
 public class Ingrediente {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idIngrediente;
 
     @NotNull
     @Column( nullable = false )
     private String Nome;
-
-    @ManyToMany
-    @JoinTable(
-            name = "IngredientesReceitas",
-            joinColumns = @JoinColumn(name = "idIngrediente"),
-            inverseJoinColumns = @JoinColumn(name = "idReceita")
-    )
-    private List<Receita> receitas;
 
 
 }

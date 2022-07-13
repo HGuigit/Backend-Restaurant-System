@@ -10,9 +10,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
-
-import static javax.persistence.GenerationType.AUTO;
 
 @Entity
 @Data
@@ -20,7 +20,7 @@ import static javax.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idUsuario;
     @NotNull
     @Column( nullable = false )
@@ -30,7 +30,12 @@ public class Usuario {
     private String senha;
     @NotNull
     private boolean isFuncionario;
+
     @OneToOne
     @JoinColumn(name = "idFuncionario")
     private Funcionario funcionarioId;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Autorizacao> autorizacoes = new ArrayList<>();
 }
+

@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /*
@@ -18,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Receita {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idReceita;
     @NotNull
     @Column(nullable = false)
@@ -30,12 +32,7 @@ public class Receita {
     @NotNull
     @Column(nullable = false)
     private String URL;
-    @ManyToMany
-    @JoinTable(
-            name = "Itens",
-            joinColumns = @JoinColumn(name = "idReceita"),
-            inverseJoinColumns = @JoinColumn(name = "idPedido")
-    )
-    private List<Pedido> pedidos;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Ingrediente> ingredientes = new ArrayList<>();
 
 }

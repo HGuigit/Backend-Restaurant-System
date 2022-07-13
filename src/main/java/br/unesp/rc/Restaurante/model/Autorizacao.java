@@ -12,6 +12,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -20,18 +22,11 @@ import java.util.List;
 @AllArgsConstructor
 public class Autorizacao {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idAutorizacao;
-
     @NotNull
-    @Column( nullable = false )
+    @Column(nullable = false)
     private String nome;
 
-    @ManyToMany
-    @JoinTable(
-            name = "Permissao",
-            joinColumns = @JoinColumn(name = "idAutorizacao"),
-            inverseJoinColumns = @JoinColumn(name = "idUsuario")
-    )
-    private List<Usuario> usuarios;
+
 }
