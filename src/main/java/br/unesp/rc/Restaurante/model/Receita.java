@@ -32,6 +32,9 @@ public class Receita {
     @NotNull
     @Column(nullable = false)
     private String URL;
+    @NotNull
+    @Column(nullable = false)
+    private String descricao;
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Ingrediente> ingredientes = new ArrayList<>();
 

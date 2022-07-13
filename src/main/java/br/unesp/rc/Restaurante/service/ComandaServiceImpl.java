@@ -37,7 +37,7 @@ public class ComandaServiceImpl implements ComandaService{
             log.error("Comanda não encontrada");
             throw new RuntimeException("Comanda não Encontrada");
         }else{
-            log.info("Comanda encontrada: {}", comanda.getId());
+            log.info("Comanda encontrada: {}", comanda.getComandaCode());
             return comanda;
         }
 

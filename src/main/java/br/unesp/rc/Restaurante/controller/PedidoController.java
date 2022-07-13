@@ -10,7 +10,6 @@ import br.unesp.rc.Restaurante.service.PedidoService;
 import br.unesp.rc.Restaurante.service.PedidoServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -21,6 +20,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="http://localhost:3000")
 @RequestMapping("/pedido")
 @RequiredArgsConstructor
 @Slf4j

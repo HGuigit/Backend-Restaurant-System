@@ -37,7 +37,7 @@ public class FuncionarioServiceImpl implements FuncionarioService{
             log.error("Funcionario não encontrada");
             throw new RuntimeException("Funcionario não Encontrada");
         }else{
-            log.info("Funcionario encontrada: {}", funcionario.getId());
+            log.info("Funcionario encontrada: {}", funcionario.getCPF());
             return funcionario;
         }
 

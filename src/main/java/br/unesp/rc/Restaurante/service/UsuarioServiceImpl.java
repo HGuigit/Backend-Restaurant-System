@@ -31,13 +31,13 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
 
     @Override
-    public Usuario getUsuarioBy(String nome) {
-        Usuario usuario = usuarioRepo.findByNome(nome);
+    public Usuario getUsuarioByUsername(String username) {
+        Usuario usuario = usuarioRepo.findByUsername(username);
         if(usuario == null){
             log.error("Usuario não encontrada");
             throw new RuntimeException("Usuario não Encontrada");
         }else{
-            log.info("Usuario encontrada: {}", usuario.getNome());
+            log.info("Usuario encontrada: {}", usuario.getUsername());
             return usuario;
         }
 

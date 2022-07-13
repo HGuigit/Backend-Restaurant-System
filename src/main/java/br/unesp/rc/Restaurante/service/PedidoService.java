@@ -1,13 +1,20 @@
 package br.unesp.rc.Restaurante.service;
 
-import br.unesp.rc.Restaurante.model.Permissoes;
+/*
+@author Guilherme on 13/07/2022.
+@project Restaurante
+*/
+
+import br.unesp.rc.Restaurante.model.Pedido;
 
 import java.util.List;
 
-public interface PermissoesService {
+public interface PedidoService {
 
-    Permissoes savePermissoes(Permissoes permissoes);
-    List<Permissoes> getAllPermissoes();
-    Permissoes getPermissoesById(int idPermissoes);
+    Pedido getPedidoById(int idPedido);
+    List<Pedido> getAllPedidos();
+    List<Pedido> getPedidosComanda(int idComanda);
+    List<Pedido> getPedidosFunc(int idFuncionario);
+    Pedido savePedido(Pedido pedido);
 
 }

@@ -7,20 +7,17 @@ package br.unesp.rc.Restaurante.controller;
 
 import br.unesp.rc.Restaurante.model.Receita;
 import br.unesp.rc.Restaurante.service.ReceitaService;
-import br.unesp.rc.Restaurante.service.ReceitaServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="http://localhost:3000")
 @RequestMapping("/receita")
 @RequiredArgsConstructor
 @Slf4j
