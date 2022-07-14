@@ -24,10 +24,10 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPedido;
-
     @NotNull
     private Date DataHora;
-
+    @NotNull
+    private int avaliacaoAtendimento;
     @NotNull
     @OneToOne
     @JoinColumn(name = "idFuncionario")

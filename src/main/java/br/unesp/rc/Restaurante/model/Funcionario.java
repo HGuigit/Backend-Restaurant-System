@@ -21,6 +21,8 @@ public class Funcionario {
     @NotNull
     private String CPF;
     @NotNull
+    private String Nome;
+    @NotNull
     private String CarteiraTrabalho;
     @NotNull
     private float Salario;
@@ -28,5 +30,7 @@ public class Funcionario {
     private Date dataContratacao;
     @NotNull
     private String ocupacao;
+    @NotNull
+    private String urlImg;
 
 }
