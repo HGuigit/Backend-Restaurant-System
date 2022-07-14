@@ -27,7 +27,6 @@ public class Ingrediente {
     private int idIngrediente;
 
     @NotNull
-    @Column( nullable = false )
     private String Nome;
 
 

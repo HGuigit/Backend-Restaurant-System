@@ -23,10 +23,8 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idUsuario;
     @NotNull
-    @Column( nullable = false )
     private String username;
     @NotNull
-    @Column( nullable = false )
     private String senha;
     @NotNull
     private boolean isFuncionario;

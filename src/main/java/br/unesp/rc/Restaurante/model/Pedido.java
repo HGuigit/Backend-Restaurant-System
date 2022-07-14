@@ -26,10 +26,6 @@ public class Pedido {
     private int idPedido;
 
     @NotNull
-    private float valorTotal;
-
-    @NotNull
-    @Column( nullable = false )
     private Date DataHora;
 
     @NotNull

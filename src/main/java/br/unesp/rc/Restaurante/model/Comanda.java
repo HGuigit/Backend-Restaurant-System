@@ -23,7 +23,6 @@ public class Comanda {
     private int idComanda;
 
     @NotNull
-    @Column( nullable = false )
     private String comandaCode;
 
 

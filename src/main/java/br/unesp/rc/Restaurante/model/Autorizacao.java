@@ -25,7 +25,6 @@ public class Autorizacao {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idAutorizacao;
     @NotNull
-    @Column(nullable = false)
     private String nome;
 
 
